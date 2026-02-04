@@ -9,30 +9,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    @keyframes gradientMove {
+    @keyframes gradientFlow {
       0% { background-position: 0% 50%; }
+      25% { background-position: 50% 100%; }
       50% { background-position: 100% 50%; }
+      75% { background-position: 50% 0%; }
       100% { background-position: 0% 50%; }
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(-45deg, #071224, #0b1b34, #0a192f, #0f2a4a);
-      background-size: 400% 400%;
-      animation: gradientMove 18s ease infinite;
+      background: linear-gradient(120deg, #071224, #0a192f, #0f2a4a, #0b1b34);
+      background-size: 300% 300%;
+      animation: gradientFlow 22s ease infinite;
       color: #e6edf6;
     }
 
     .glass {
       background: rgba(255,255,255,0.04);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
       border: 1px solid rgba(255,255,255,0.08);
-      transition: 0.3s ease;
+      transition: all 0.4s ease;
     }
 
     .glass:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 30px rgba(56,189,248,0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(56,189,248,0.25);
     }
 
     .tag {
@@ -42,41 +44,78 @@
 
     .reveal {
       opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.9s ease;
+      transform: translateY(60px);
     }
 
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
+    img {
+      box-shadow: 0 30px 80px rgba(56,189,248,0.35);
+    }
+
+    /* ================= PRINT / ATS PDF MODE ================= */
+
+    @media print {
+
+      body {
+        background: white !important;
+        color: black !important;
+        animation: none;
+        font-size: 12pt;
+      }
+
+      nav, footer, #contact {
+        display: none !important;
+      }
+
+      .glass, .tag {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+      img {
+        display: none;
+      }
+
+      h1, h2, h3, h4 {
+        color: black !important;
+      }
+
+      section {
+        padding: 10px 0 !important;
+        page-break-inside: avoid;
+      }
+
+      ul {
+        margin-left: 18px;
+      }
     }
   </style>
 </head>
 
-<body class="leading-relaxed">
+<body>
 
 <!-- NAV -->
 <nav class="flex justify-between items-center px-10 py-6">
-  <h1 class="text-xl font-bold tracking-wide">HARISH BISHT</h1>
+  <h1 class="text-3xl md:text-4xl font-extrabold tracking-wide text-sky-400">
+    HARISH BISHT
+  </h1>
   <a href="#contact" class="text-sm hover:text-sky-400">Connect</a>
 </nav>
 
 <!-- HERO -->
-<!-- HERO WITH PHOTO -->
 <section class="px-10 pt-16 pb-24 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
-  <!-- LEFT SIDE TEXT -->
   <div>
     <div class="tag inline-block px-4 py-1 rounded-full text-sky-300 text-xs mb-6">
       Senior IT Operations Leader
     </div>
 
-    <h2 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+    <h2 class="text-3xl md:text-4xl font-bold leading-snug mb-6">
       Driving Global IT Excellence <br/>
       <span class="text-sky-400">for Enterprise 4.0</span>
     </h2>
 
-    <p class="text-lg text-slate-400 max-w-xl mb-8">
+    <p class="text-xl text-slate-300 max-w-xl mb-8 font-medium">
       23+ years of steering IT operations, service delivery, and digital workplace strategy for global giants like UKG.
     </p>
 
@@ -87,31 +126,11 @@
     </div>
   </div>
 
-  <!-- RIGHT SIDE PHOTO -->
   <div class="flex justify-center md:justify-end">
-    <img src="profile.png"
-         alt="Harish Bisht"
-         class="w-80 h-80 object-cover rounded-3xl border border-white/10 shadow-2xl">
+    <img src="profile.png" alt="Harish Bisht"
+         class="w-80 h-80 object-cover rounded-3xl border border-white/10">
   </div>
 
-</section>
-
-  <div class="tag inline-block px-4 py-1 rounded-full text-sky-300 text-xs mb-6">Senior IT Operations Leader</div>
-
-  <h2 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-    Driving Global IT Excellence <br/>
-    <span class="text-sky-400">for Enterprise 4.0</span>
-  </h2>
-
-  <p class="text-lg text-slate-400 max-w-2xl mb-8">
-    23+ years of steering IT operations, service delivery, and digital workplace strategy for global giants like UKG.
-  </p>
-
-  <div class="flex flex-wrap gap-6 text-sm text-slate-400">
-    <span>📍 New Delhi, India</span>
-    <span>✉️ hbisht@gmail.com</span>
-    <span>📞 +91-7838799961</span>
-  </div>
 </section>
 
 <!-- IMPACT -->
@@ -144,14 +163,15 @@
   <h3 class="text-2xl font-bold mb-12">Professional Experience</h3>
 
   <div class="space-y-12">
+
     <div>
       <div class="flex justify-between flex-wrap gap-3">
         <h4 class="text-xl font-bold">Sr. Manager, IT — UKG</h4>
         <span class="text-sky-400 text-sm">Jan 2022 – Dec 2025</span>
       </div>
       <ul class="mt-4 space-y-2 text-slate-400 text-sm list-disc list-inside">
-        <li>Owned end-to-end IT Operations supporting 4,000+ users.</li>
-        <li>Integrated AI analytics to resolve endpoint issues proactively.</li>
+        <li>Owned end-to-end IT Operations for 4,000+ users.</li>
+        <li>Integrated AI analytics for proactive issue resolution.</li>
         <li>Established ITAM frameworks ensuring audit compliance.</li>
       </ul>
     </div>
@@ -163,8 +183,8 @@
       </div>
       <ul class="mt-4 space-y-2 text-slate-400 text-sm list-disc list-inside">
         <li>Led 100% remote work transition with zero downtime.</li>
-        <li>Implemented ITIL practices reducing escalations.</li>
-        <li>Automated provisioning workflows.</li>
+        <li>Implemented ITIL best practices reducing escalations.</li>
+        <li>Automated endpoint provisioning workflows.</li>
       </ul>
     </div>
 
@@ -175,6 +195,7 @@
         Managed VMware virtualization, HP 3PAR storage, and Windows migrations.
       </p>
     </div>
+
   </div>
 </section>
 
@@ -208,27 +229,28 @@
 <!-- CONTACT -->
 <section id="contact" class="reveal px-10 py-20 text-center">
   <h3 class="text-3xl font-bold mb-6">Open to Leadership Opportunities</h3>
-  <p class="text-slate-400 mb-8">Let’s discuss how I can transform your IT Operations.</p>
   <a href="mailto:hbisht@gmail.com" class="bg-sky-500 text-black px-6 py-3 rounded-full font-semibold">Email Me</a>
 </section>
 
 <footer class="text-center text-slate-500 text-xs pb-10">
-  © 2026 Harish Bisht — Senior IT Operations Leader
+  © 2026 Harish Bisht
 </footer>
 
 <script>
-const reveals = document.querySelectorAll(".reveal");
-function revealOnScroll() {
-  for (let el of reveals) {
-    const windowHeight = window.innerHeight;
-    const elementTop = el.getBoundingClientRect().top;
-    const visiblePoint = 120;
-    if (elementTop < windowHeight - visiblePoint) {
-      el.classList.add("active");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.transition = "all 1s cubic-bezier(0.22, 1, 0.36, 1)";
+      entry.target.style.opacity = "1";
+      entry.target.style.transform = "translateY(0)";
+      observer.unobserve(entry.target);
     }
-  }
-}
-window.addEventListener("scroll", revealOnScroll);
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(el => {
+  observer.observe(el);
+});
 </script>
 
 </body>
