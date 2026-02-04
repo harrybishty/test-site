@@ -1,146 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harish Bisht Test-1 | Senior IT Leader</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
-        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .timeline-line { width: 2px; background: linear-gradient(to bottom, #38bdf8, #1e293b); }
-        .skill-dot { height: 8px; width: 8px; border-radius: 50%; background: #38bdf8; display: inline-block; margin-right: 8px; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harish Bisht | Senior IT Operations Leader</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Animated Gradient Background */
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(-45deg, #071224, #0b1b34, #0a192f, #0f2a4a);
+      background-size: 400% 400%;
+      animation: gradientMove 18s ease infinite;
+      color: #e6edf6;
+    }
+
+    .glass {
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: 0.3s ease;
+    }
+
+    .glass:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(56,189,248,0.15);
+    }
+
+    .tag {
+      background: rgba(56,189,248,0.1);
+      border: 1px solid rgba(56,189,248,0.4);
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.9s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
+
 <body class="leading-relaxed">
 
-    <header class="py-16 px-6 text-center border-b border-white/10 bg-slate-900/50">
-        <div class="container mx-auto">
-            <h1 class="text-5xl font-bold tracking-tight mb-2">HARISH <span class="gradient-text">BISHT</span></h1>
-            <p class="text-xl text-slate-400 font-light mb-6 tracking-wide uppercase">Senior IT Leader | Digital Workplace Strategy & Global Operations</p>
-            <div class="flex justify-center gap-6 text-sm text-slate-300">
-                <span>📍 New Delhi, India</span>
-                <span>📞 +91-7838799961</span>
-                <span>✉️ hbisht@gmail.com</span>
-            </div>
-            <div class="mt-8 flex justify-center gap-4">
-                <span class="px-4 py-1 rounded-full glass text-xs font-semibold text-sky-400 border-sky-400/30">AI Transformation</span>
-                <span class="px-4 py-1 rounded-full glass text-xs font-semibold text-indigo-400 border-indigo-400/30">DEX Strategy</span>
-                <span class="px-4 py-1 rounded-full glass text-xs font-semibold text-purple-400 border-purple-400/30">Global Ops</span>
-            </div>
-        </div>
-    </header>
+<!-- NAV -->
+<nav class="flex justify-between items-center px-10 py-6">
+  <h1 class="text-xl font-bold tracking-wide">HARISH BISHT</h1>
+  <div class="flex gap-6 items-center text-sm">
+    <a href="#contact" class="hover:text-sky-400">Connect</a>
+    <a href="cv.pdf" class="bg-sky-500 hover:bg-sky-400 px-4 py-2 rounded-full text-black font-semibold">Download CV</a>
+  </div>
+</nav>
 
-    <main class="container mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
-        
-        <div class="lg:col-span-4 space-y-10">
-            
-            <section>
-                <h3 class="text-blue-400 font-bold uppercase tracking-widest text-xs mb-4">Executive Summary</h3>
-                <p class="text-slate-400 text-sm leading-relaxed glass p-6 rounded-2xl">
-                    Strategic IT Leader with **23+ years** of experience transforming global IT operations. Expert in bridging the gap between technical operations and business strategy, managing **$8M budgets**. Proven track record of leveraging AI (Copilot/ChatGPT) to modernize service delivery for 4,000+ users.
-                </p>
-            </section>
+<!-- HERO -->
+<section class="px-10 pt-10 pb-20 max-w-6xl mx-auto">
+  <div class="tag inline-block px-4 py-1 rounded-full text-sky-300 text-xs mb-6">Senior IT Operations Leader</div>
 
-            <section>
-                <h3 class="text-blue-400 font-bold uppercase tracking-widest text-xs mb-4">Core Competencies</h3>
-                <div class="space-y-3">
-                    <div class="w-full bg-slate-800 rounded-full h-2">
-                        <div class="bg-sky-500 h-2 rounded-full" style="width: 95%"></div>
-                    </div>
-                    <p class="text-xs text-slate-300 mb-4">Digital Workplace & DEX</p>
-                    
-                    <div class="w-full bg-slate-800 rounded-full h-2">
-                        <div class="bg-indigo-500 h-2 rounded-full" style="width: 90%"></div>
-                    </div>
-                    <p class="text-xs text-slate-300 mb-4">AI Integration & Automation</p>
+  <h2 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+    Driving Global IT Excellence <br/>
+    <span class="text-sky-400">for Enterprise 4.0</span>
+  </h2>
 
-                    <div class="w-full bg-slate-800 rounded-full h-2">
-                        <div class="bg-purple-500 h-2 rounded-full" style="width: 85%"></div>
-                    </div>
-                    <p class="text-xs text-slate-300 mb-4">Global Service Delivery</p>
-                </div>
-            </section>
+  <p class="text-lg text-slate-400 max-w-2xl mb-8">
+    23+ years of steering IT operations, service delivery, and digital workplace strategy for global giants like UKG.
+  </p>
 
-            <section class="glass p-6 rounded-2xl border-l-4 border-sky-500">
-                <h3 class="text-white font-bold mb-4">Education</h3>
-                <div class="space-y-4">
-                    <div>
-                        <p class="text-sky-400 font-bold text-sm">IIM Kashipur</p>
-                        <p class="text-xs text-slate-300">Strategy & Leadership</p>
-                    </div>
-                    <div>
-                        <p class="text-sky-400 font-bold text-sm">IGNOU, Delhi</p>
-                        <p class="text-xs text-slate-300">PG Diploma in IT | Cybersecurity</p>
-                    </div>
-                    <div>
-                        <p class="text-sky-400 font-bold text-sm">Annamalai University</p>
-                        <p class="text-xs text-slate-300">B.Sc | Information Technology</p>
-                    </div>
-                </div>
-            </section>
-        </div>
+  <div class="flex flex-wrap gap-6 text-sm text-slate-400">
+    <span>📍 New Delhi, India</span>
+    <span>✉️ hbisht@gmail.com</span>
+    <span>📞 +91-7838799961</span>
+  </div>
+</section>
 
-        <div class="lg:col-span-8">
-            <h3 class="text-blue-400 font-bold uppercase tracking-widest text-xs mb-8">Professional Journey</h3>
-            
-            <div class="relative pl-8">
-                <div class="absolute left-0 top-0 bottom-0 timeline-line"></div>
+<!-- IMPACT -->
+<section class="reveal px-10 py-16 max-w-6xl mx-auto">
+  <h3 class="text-2xl font-bold mb-10">⚡ Key Impact Highlights</h3>
 
-                <div class="mb-12 relative">
-                    <div class="absolute -left-[37px] top-1 h-4 w-4 rounded-full bg-sky-500 border-4 border-slate-900 shadow-[0_0_10px_#38bdf8]"></div>
-                    <div class="flex justify-between items-start mb-2">
-                        <h4 class="text-xl font-bold text-white">Sr. Manager, IT <span class="text-sky-400 text-sm font-normal">@ UKG (Ultimate Kronos Group)</span></h4>
-                        <span class="text-xs bg-sky-500/10 text-sky-400 px-3 py-1 rounded-full border border-sky-500/20">2022 – 2025</span>
-                    </div>
-                    <ul class="text-sm text-slate-400 space-y-3">
-                        <li class="flex items-start"><span class="skill-dot mt-1.5"></span> Managed $8M+ budget, achieving 10% cost reduction via vendor negotiation.</li>
-                        <li class="flex items-start"><span class="skill-dot mt-1.5"></span> Led adoption of Microsoft Copilot/ChatGPT for service desk efficiency.</li>
-                        <li class="flex items-start"><span class="skill-dot mt-1.5"></span> Modernized DEX for 4,000+ users via AI-driven analytics.</li>
-                    </ul>
-                </div>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="glass p-8 rounded-2xl">
+      <h4 class="text-4xl font-bold text-sky-400">4,000+</h4>
+      <p class="mt-3 font-semibold">User Support</p>
+      <p class="text-slate-400 text-sm mt-2">Enterprise users managed globally across hybrid environments.</p>
+    </div>
 
-                <div class="mb-12 relative opacity-80">
-                    <div class="absolute -left-[37px] top-1 h-4 w-4 rounded-full bg-indigo-500 border-4 border-slate-900"></div>
-                    <div class="flex justify-between items-start mb-2">
-                        <h4 class="text-xl font-bold text-white">IT Manager <span class="text-indigo-400 text-sm font-normal">@ UKG</span></h4>
-                        <span class="text-xs bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full border border-indigo-500/20">2014 – 2021</span>
-                    </div>
-                    <ul class="text-sm text-slate-400 space-y-3">
-                        <li class="flex items-start"><span class="skill-dot mt-1.5"></span> Scaled IT operations during rapid growth using ITIL/Agile best practices.</li>
-                        <li class="flex items-start"><span class="skill-dot mt-1.5"></span> Directed seamless transition to 100% remote work during the pandemic.</li>
-                        <li class="flex items-start"><span class="skill-dot mt-1.5"></span> Automated provisioning workflows to reduce onboarding time.</li>
-                    </ul>
-                </div>
+    <div class="glass p-8 rounded-2xl">
+      <h4 class="text-4xl font-bold text-sky-400">99.9%</h4>
+      <p class="mt-3 font-semibold">Uptime</p>
+      <p class="text-slate-400 text-sm mt-2">Consistency for business-critical AV & collaboration suites.</p>
+    </div>
 
-                <div class="relative opacity-60">
-                    <div class="absolute -left-[37px] top-1 h-4 w-4 rounded-full bg-slate-600 border-4 border-slate-900"></div>
-                    <div class="flex justify-between items-start mb-2">
-                        <h4 class="text-xl font-bold text-white">Lead Network & Systems Admin</h4>
-                        <span class="text-xs bg-slate-700 text-slate-300 px-3 py-1 rounded-full">2007 – 2014</span>
-                    </div>
-                    <p class="text-sm text-slate-400">Managed VMware virtualization, HP 3PAR storage, and large-scale Windows migration projects.</p>
-                </div>
+    <div class="glass p-8 rounded-2xl">
+      <h4 class="text-4xl font-bold text-sky-400">100%</h4>
+      <p class="mt-3 font-semibold">Compliance</p>
+      <p class="text-slate-400 text-sm mt-2">Successful audit scores in IT Asset Management.</p>
+    </div>
+  </div>
+</section>
 
-            </div>
+<!-- EXPERIENCE -->
+<section class="reveal px-10 py-16 max-w-6xl mx-auto">
+  <h3 class="text-2xl font-bold mb-12">Professional Experience</h3>
 
-            <div class="mt-16">
-                <h3 class="text-blue-400 font-bold uppercase tracking-widest text-xs mb-6">Expertise & Certs</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="glass p-4 rounded-xl text-center text-xs font-bold text-slate-300">ITIL 4 Foundation</div>
-                    <div class="glass p-4 rounded-xl text-center text-xs font-bold text-slate-300">Cybersecurity</div>
-                    <div class="glass p-4 rounded-xl text-center text-xs font-bold text-slate-300">Cloud Infra</div>
-                    <div class="glass p-4 rounded-xl text-center text-xs font-bold text-slate-300">SaaS Governance</div>
-                </div>
-            </div>
-        </div>
-    </main>
+  <div class="space-y-12">
+    <div>
+      <div class="flex justify-between flex-wrap gap-3">
+        <h4 class="text-xl font-bold">Sr. Manager, IT — UKG</h4>
+        <span class="text-sky-400 text-sm">Jan 2022 – Dec 2025</span>
+      </div>
+      <ul class="mt-4 space-y-2 text-slate-400 text-sm list-disc list-inside">
+        <li>Owned end-to-end IT Operations supporting 4,000+ users.</li>
+        <li>Integrated AI analytics to resolve endpoint issues proactively.</li>
+        <li>Established ITAM frameworks ensuring audit compliance.</li>
+      </ul>
+    </div>
 
-    <footer class="py-12 border-t border-white/5 text-center text-slate-500 text-xs">
-        <p>© 2026 Harish Bisht | Executive Leadership Portfolio</p>
-    </footer>
+    <div>
+      <div class="flex justify-between flex-wrap gap-3">
+        <h4 class="text-xl font-bold">IT Manager — UKG</h4>
+        <span class="text-sky-400 text-sm">Feb 2014 – Dec 2021</span>
+      </div>
+      <ul class="mt-4 space-y-2 text-slate-400 text-sm list-disc list-inside">
+        <li>Led 100% remote work transition with zero downtime.</li>
+        <li>Implemented ITIL practices reducing escalations.</li>
+        <li>Automated provisioning workflows.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-xl font-bold">Lead Network & Systems Administrator — UKG</h4>
+      <span class="text-sky-400 text-sm">Feb 2007 – Jan 2014</span>
+      <p class="mt-4 text-slate-400 text-sm">
+        Managed VMware virtualization, HP 3PAR storage, and Windows migrations.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="reveal px-10 py-16 max-w-6xl mx-auto">
+  <h3 class="text-2xl font-bold mb-8">Tools & Platforms</h3>
+  <div class="flex flex-wrap gap-3 text-sm">
+    <span class="glass px-4 py-2 rounded-full">ITIL 4</span>
+    <span class="glass px-4 py-2 rounded-full">Digital Workplace (DEX)</span>
+    <span class="glass px-4 py-2 rounded-full">AI Analytics</span>
+    <span class="glass px-4 py-2 rounded-full">ServiceNow</span>
+    <span class="glass px-4 py-2 rounded-full">VMware</span>
+    <span class="glass px-4 py-2 rounded-full">ITAM</span>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="reveal px-10 py-16 max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+  <div>
+    <h3 class="text-2xl font-bold mb-6">Education</h3>
+    <p class="font-semibold">Executive Program in Strategy & Leadership — IIM Kashipur</p>
+    <p class="mt-4 font-semibold">PG Diploma in IT | Cybersecurity — IGNOU</p>
+  </div>
+
+  <div>
+    <h3 class="text-2xl font-bold mb-6">Certifications</h3>
+    <p class="glass p-4 rounded-xl inline-block">ITIL 4 Foundation</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="reveal px-10 py-20 text-center">
+  <h3 class="text-3xl font-bold mb-6">Open to Leadership Opportunities</h3>
+  <p class="text-slate-400 mb-8">Let’s discuss how I can transform your IT Operations.</p>
+  <a href="mailto:hbisht@gmail.com" class="bg-sky-500 text-black px-6 py-3 rounded-full font-semibold">Email Me</a>
+</section>
+
+<footer class="text-center text-slate-500 text-xs pb-10">
+  © 2026 Harish Bisht — Senior IT Operations Leader
+</footer>
+
+<script>
+const reveals = document.querySelectorAll(".reveal");
+function revealOnScroll() {
+  for (let el of reveals) {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    const visiblePoint = 120;
+    if (elementTop < windowHeight - visiblePoint) {
+      el.classList.add("active");
+    }
+  }
+}
+window.addEventListener("scroll", revealOnScroll);
+</script>
 
 </body>
 </html>
