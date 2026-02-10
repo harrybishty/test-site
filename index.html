@@ -370,5 +370,42 @@ document.querySelectorAll(".reveal").forEach(el => {
 });
 </script>
 
+<div id="chat-messages" style="border:1px solid #ccc; height:200px; overflow:auto; padding:10px;"></div>
+
+<input id="chat-input" type="text" placeholder="Ask something..." style="width:70%; padding:8px;">
+
+<button onclick="sendMessage()" style="padding:8px;">Send</button>
+
+
+<script>
+async function sendMessage() {
+  const input = document.getElementById("chat-input");
+  const message = input.value.trim();
+  if (!message) return;
+
+  const messagesDiv = document.getElementById("chat-messages");
+  messagesDiv.innerHTML += "<p><b>You:</b> " + message + "</p>";
+  input.value = "";
+
+  try {
+    const response = await fetch("https://hbisht-chat-backend.onrender.com/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: message })
+    });
+
+    const data = await response.json();
+    const reply = data.choices[0].message.content;
+
+    messagesDiv.innerHTML += "<p><b>AI:</b> " + reply + "</p>";
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+  } catch (error) {
+    messagesDiv.innerHTML += "<p><b>AI:</b> Error connecting to server.</p>";
+  }
+}
+</script>
+
+
 </body>
 </html>
