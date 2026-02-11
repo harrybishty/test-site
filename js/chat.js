@@ -269,3 +269,18 @@ overlay.addEventListener("click", function () {
 
 });
 });
+
+  /* =====================================================
+     7 whatsapp
+     ===================================================== */
+     function waToggle() {
+   var chat = document.getElementById("waChat");
+   chat.style.display = chat.style.display === "block" ? "none" : "block";
+}
+
+function waSend() {
+   var message = document.getElementById("waInput").value;
+   var phone = "917838799961"; 
+   var url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+   window.open(url, "_blank");
+}
