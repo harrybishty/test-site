@@ -311,5 +311,18 @@ document.querySelectorAll(".reveal").forEach(el => {
 </div>
 
 <script src="js/chat.js"></script>
+
+<div class="wa-widget">
+   <div class="wa-chat" id="waChat">
+      <div class="wa-header">Chat with us</div>
+      <input type="text" id="waInput" placeholder="Type your message">
+      <button onclick="waSend()">Send</button>
+   </div>
+
+   <div class="wa-button" onclick="waToggle()">
+      💬
+   </div>
+</div>
+
 </body>
 </html>
