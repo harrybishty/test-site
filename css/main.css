@@ -1,3 +1,13 @@
+/* =====================================================
+   MAIN WEBSITE STYLING
+   Description: Core layout, animation and UI effects
+   Author: Harish Website
+===================================================== */
+
+
+/* =====================================================
+   1️⃣ BACKGROUND ANIMATION (GRADIENT FLOW)
+   ===================================================== */
 
 @keyframes gradientFlow {
   0% { background-position: 0% 50%; }
@@ -7,6 +17,11 @@
   100% { background-position: 0% 50%; }
 }
 
+
+/* =====================================================
+   2️⃣ GLOBAL BODY STYLING
+   ===================================================== */
+
 body {
   font-family: 'Inter', sans-serif;
   background: linear-gradient(120deg, #071224, #0a192f, #0f2a4a, #0b1b34);
@@ -14,6 +29,11 @@ body {
   animation: gradientFlow 22s ease infinite;
   color: #e6edf6;
 }
+
+
+/* =====================================================
+   3️⃣ GLASS EFFECT CARDS
+   ===================================================== */
 
 .glass {
   background: rgba(255,255,255,0.04);
@@ -27,15 +47,30 @@ body {
   box-shadow: 0 20px 60px rgba(56,189,248,0.25);
 }
 
+
+/* =====================================================
+   4️⃣ TAG / BADGE STYLING
+   ===================================================== */
+
 .tag {
   background: rgba(56,189,248,0.1);
   border: 1px solid rgba(56,189,248,0.4);
 }
 
+
+/* =====================================================
+   5️⃣ SCROLL REVEAL ANIMATION BASE
+   ===================================================== */
+
 .reveal {
   opacity: 0;
   transform: translateY(60px);
 }
+
+
+/* =====================================================
+   6️⃣ IMAGE SHADOW EFFECT
+   ===================================================== */
 
 img {
   box-shadow: 0 30px 80px rgba(56,189,248,0.35);
