@@ -393,5 +393,87 @@ font-weight: bold;
   #chat-input {
     font-size: 16px; /* prevents iOS zoom */
   }
+}
+/* ===== Premium WhatsApp Widget ===== */
 
+.wa-widget {
+   position: fixed;
+   top: 80px;
+   right: 25px;
+   z-index: 20000;
+   font-family: 'Inter', sans-serif;
+}
+
+.wa-button {
+   width: 55px;
+   height: 55px;
+   background: linear-gradient(135deg, #25D366, #128C7E);
+   color: #fff;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 24px;
+   cursor: pointer;
+   box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+   transition: 0.3s ease;
+}
+
+.wa-button:hover {
+   transform: translateY(-4px);
+   box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+.wa-chat {
+   display: none;
+   position: absolute;
+   top: 70px;
+   right: 0;
+   width: 280px;
+   background: rgba(15, 23, 42, 0.95);
+   backdrop-filter: blur(16px);
+   border: 1px solid rgba(255,255,255,0.08);
+   border-radius: 18px;
+   padding: 18px;
+   box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+   animation: fadeInUp 0.3s ease;
+}
+
+.wa-chat .wa-header {
+   font-weight: 600;
+   font-size: 14px;
+   color: #25D366;
+   margin-bottom: 12px;
+}
+
+.wa-chat input {
+   width: 100%;
+   padding: 10px 12px;
+   background: rgba(255,255,255,0.05);
+   border: 1px solid rgba(255,255,255,0.08);
+   border-radius: 10px;
+   color: #fff;
+   outline: none;
+   font-size: 14px;
+}
+
+.wa-chat input::placeholder {
+   color: #94a3b8;
+}
+
+.wa-chat button {
+   margin-top: 12px;
+   width: 100%;
+   padding: 10px;
+   background: linear-gradient(135deg, #25D366, #128C7E);
+   color: #fff;
+   border: none;
+   border-radius: 10px;
+   font-weight: 600;
+   cursor: pointer;
+   transition: 0.3s ease;
+}
+
+.wa-chat button:hover {
+   opacity: 0.85;
 }
