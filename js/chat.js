@@ -16,6 +16,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const sendBtn = document.getElementById("chat-send");
   const input = document.getElementById("chat-input");
   const messages = document.getElementById("chat-messages");
+  const closeBtn = document.getElementById("chat-close");
+/* =====================================================
+   🕒 INACTIVITY TIMER VARIABLES
+   ===================================================== */
+
+let inactivityTimer;
+let warningTimer;
+const inactivityLimit = 120000; // 120 seconds
+
 
   /* =====================================================
      2️⃣ SAFETY CHECK – ENSURE ELEMENTS EXIST
@@ -38,19 +47,65 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
      </div>
   `;
+/* =====================================================
+   🕒 INACTIVITY TIMER FUNCTION
+   ===================================================== */
 
+function resetInactivityTimer() {
+
+  clearTimeout(inactivityTimer);
+  clearTimeout(warningTimer);
+
+  // After 120 sec → show warning
+  inactivityTimer = setTimeout(() => {
+
+    messages.innerHTML += `
+      <div class="message-wrapper ai">
+        <div class="label">AI</div>
+        <div class="ai-message">
+          Are you still there? 👀
+        </div>
+      </div>
+    `;
+    messages.scrollTop = messages.scrollHeight;
+
+    // After another 120 sec → close chat
+    warningTimer = setTimeout(() => {
+
+      messages.innerHTML += `
+        <div class="message-wrapper ai">
+          <div class="label">AI</div>
+          <div class="ai-message">
+            Thanks for chatting 👋 Closing the window now.
+          </div>
+        </div>
+      `;
+
+      messages.scrollTop = messages.scrollHeight;
+
+      setTimeout(() => {
+        windowBox.style.display = "none";
+      }, 1500);
+
+    }, inactivityLimit);
+
+  }, inactivityLimit);
+}
   /* =====================================================
      4️⃣ CHAT WINDOW TOGGLE (OPEN / CLOSE)
      ===================================================== */
 
-  bubble.addEventListener("click", function () {
-    if (windowBox.style.display === "flex") {
-      windowBox.style.display = "none";
-    } else {
-      windowBox.style.display = "flex";
-      input.focus();
-    }
-  });
+ bubble.addEventListener("click", function () {
+  if (windowBox.style.display === "flex") {
+    windowBox.style.display = "none";
+    clearTimeout(inactivityTimer);
+    clearTimeout(warningTimer);
+  } else {
+    windowBox.style.display = "flex";
+    input.focus();
+    resetInactivityTimer();
+  }
+});
 
   /* =====================================================
      5️⃣ SEND MESSAGE FUNCTION
@@ -74,6 +129,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     input.value = "";
     messages.scrollTop = messages.scrollHeight;
+    resetInactivityTimer();
+
 
     /* ------------------------------
        5.2 Typing Indicator (Dots)
@@ -155,12 +212,44 @@ document.addEventListener("DOMContentLoaded", function () {
      6️⃣ EVENT LISTENERS
      ===================================================== */
 
-  sendBtn.addEventListener("click", sendMessage);
+sendBtn.addEventListener("click", function () {
+  sendMessage();
+  resetInactivityTimer();
+});
 
-  input.addEventListener("keypress", function (e) {
-    if (e.key === "Enter") {
-      sendMessage();
-    }
+input.addEventListener("keydown", function (e) {
+
+  // Reset timer whenever user types
+  resetInactivityTimer();
+
+  if (e.key === "Enter") {
+    e.preventDefault();
+    sendMessage();
+  }
+});
+windowBox.addEventListener("click", resetInactivityTimer);
+
+if (closeBtn) {
+  closeBtn.addEventListener("click", function () {
+
+    // Add thank you message
+    messages.innerHTML += `
+      <div class="message-wrapper ai">
+        <div class="label">AI</div>
+        <div class="ai-message">
+          Thanks for chatting 👋 Feel free to connect anytime!
+        </div>
+      </div>
+    `;
+
+    messages.scrollTop = messages.scrollHeight;
+
+    // Close after 2 seconds
+    setTimeout(() => {
+      windowBox.style.display = "none";
+    }, 1500);
+
   });
+}
 
 });
