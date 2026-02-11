@@ -482,3 +482,37 @@ font-weight: bold;
 .wa-chat button:hover {
    opacity: 0.85;
 }
+/* ===============================
+   WhatsApp Mobile Optimization
+================================= */
+
+@media (max-width: 768px) {
+
+  .wa-widget {
+     top: 70px;
+     right: 15px;
+  }
+
+  .wa-text {
+     display: none;
+  }
+
+  .wa-button {
+     width: 52px;
+     height: 52px;
+     padding: 0;
+     border-radius: 50%;
+     justify-content: center;
+  }
+
+  .wa-svg {
+     width: 20px;
+     height: 20px;
+  }
+
+  .wa-chat {
+     width: 92vw;
+     right: 0;
+  }
+
+}
