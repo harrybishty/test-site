@@ -292,7 +292,7 @@ document.querySelectorAll(".reveal").forEach(el => {
 </script>
 
 <div id="chat-overlay"></div>
-<div id="chat-bubble">Chat</div>
+<div id="chat-bubble">AI Chat</div>
 
 <div id="chat-window">
 
@@ -314,15 +314,18 @@ document.querySelectorAll(".reveal").forEach(el => {
 
 <div class="wa-widget">
    <div class="wa-chat" id="waChat">
-      <div class="wa-header">Chat with us</div>
+     <div class="wa-header">WhatsApp Chat</div>
       <input type="text" id="waInput" placeholder="Type your message">
       <button onclick="waSend()">Send</button>
    </div>
 
-   <div class="wa-button" onclick="waToggle()">
-      💬
-   </div>
+<div class="wa-button" onclick="waToggle()">
+   <svg class="wa-svg" viewBox="0 0 32 32" width="20" height="20">
+      <path fill="currentColor" d="M16 .396C7.164.396 0 7.56 0 16.396c0 2.837.743 5.6 2.155 8.03L0 32l7.79-2.042A15.93 15.93 0 0 0 16 32c8.836 0 16-7.164 16-16.396C32 7.56 24.836.396 16 .396zm0 29.338a13.06 13.06 0 0 1-6.656-1.826l-.476-.282-4.622 1.212 1.234-4.507-.31-.466A13.014 13.014 0 0 1 2.938 16.396c0-7.191 5.87-13.06 13.062-13.06 7.191 0 13.06 5.869 13.06 13.06 0 7.192-5.869 13.338-13.06 13.338zm7.205-9.838c-.393-.197-2.325-1.148-2.685-1.279-.36-.131-.622-.197-.885.197-.262.393-1.016 1.279-1.246 1.541-.229.262-.459.295-.852.098-.393-.197-1.659-.611-3.161-1.947-1.168-1.04-1.957-2.324-2.186-2.717-.229-.393-.024-.605.173-.802.177-.176.393-.459.59-.688.197-.229.262-.393.393-.656.131-.262.066-.492-.033-.688-.098-.197-.885-2.131-1.213-2.918-.32-.771-.645-.666-.885-.678l-.754-.013c-.262 0-.688.098-1.049.492-.36.393-1.377 1.344-1.377 3.279 0 1.934 1.41 3.804 1.606 4.066.197.262 2.773 4.237 6.72 5.94.94.406 1.673.648 2.244.829.943.3 1.803.258 2.483.156.757-.113 2.325-.949 2.653-1.869.328-.918.328-1.705.229-1.869-.098-.164-.36-.262-.754-.459z"/>
+   </svg>
+   <span class="wa-text">WhatsApp</span>
 </div>
+
 
 </body>
 </html>
