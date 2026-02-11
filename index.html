@@ -1,95 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harish Bisht | Senior IT Operations Leader</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Harish Bisht | Senior IT Operations Leader</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    @keyframes gradientFlow {
-      0% { background-position: 0% 50%; }
-      25% { background-position: 50% 100%; }
-      50% { background-position: 100% 50%; }
-      75% { background-position: 50% 0%; }
-      100% { background-position: 0% 50%; }
-    }
+<style>
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 100%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 0%; }
+  100% { background-position: 0% 50%; }
+}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(120deg, #071224, #0a192f, #0f2a4a, #0b1b34);
-      background-size: 300% 300%;
-      animation: gradientFlow 22s ease infinite;
-      color: #e6edf6;
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(120deg, #071224, #0a192f, #0f2a4a, #0b1b34);
+  background-size: 300% 300%;
+  animation: gradientFlow 22s ease infinite;
+  color: #e6edf6;
+}
 
-    .glass {
-      background: rgba(255,255,255,0.04);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.08);
-      transition: all 0.4s ease;
-    }
+.glass {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.4s ease;
+}
 
-    .glass:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 60px rgba(56,189,248,0.25);
-    }
+.glass:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(56,189,248,0.25);
+}
 
-    .tag {
-      background: rgba(56,189,248,0.1);
-      border: 1px solid rgba(56,189,248,0.4);
-    }
+.tag {
+  background: rgba(56,189,248,0.1);
+  border: 1px solid rgba(56,189,248,0.4);
+}
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(60px);
-    }
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+}
 
-    img {
-      box-shadow: 0 30px 80px rgba(56,189,248,0.35);
-    }
+img {
+  box-shadow: 0 30px 80px rgba(56,189,248,0.35);
+}
 
-    /* ================= PRINT / ATS PDF MODE ================= */
+/* ================= CHAT WIDGET ================= */
 
-    @media print {
+#chat-toggle {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #0ea5e9;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  z-index: 9999;
+  transition: 0.3s ease;
+}
 
-      body {
-        background: white !important;
-        color: black !important;
-        animation: none;
-        font-size: 12pt;
-      }
+#chat-toggle:hover {
+  transform: scale(1.1);
+}
 
-      nav, footer, #contact {
-        display: none !important;
-      }
+#chat-widget {
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+  width: 360px;
+  height: 480px;
+  background: #0f172a;
+  border-radius: 16px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  overflow: hidden;
+  z-index: 9999;
+}
 
-      .glass, .tag {
-        background: none !important;
-        border: none !important;
-        box-shadow: none !important;
-      }
+#chat-header {
+  background: #0ea5e9;
+  padding: 12px;
+  color: black;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-      img {
-        display: none;
-      }
+#chat-messages {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  font-size: 14px;
+  color: white;
+}
 
-      h1, h2, h3, h4 {
-        color: black !important;
-      }
+#chat-input-area {
+  display: flex;
+  border-top: 1px solid #1e293b;
+}
 
-      section {
-        padding: 10px 0 !important;
-        page-break-inside: avoid;
-      }
+#chat-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: #1e293b;
+  color: white;
+  outline: none;
+}
 
-      ul {
-        margin-left: 18px;
-      }
-    }
-  </style>
+#chat-input-area button {
+  padding: 10px 14px;
+  background: #0ea5e9;
+  border: none;
+  cursor: pointer;
+}
+
+@media print {
+  body { background: white !important; color: black !important; animation: none; }
+  nav, footer, #contact, #chat-toggle, #chat-widget { display: none !important; }
+}
+</style>
 </head>
 
 <body>
@@ -370,14 +415,38 @@ document.querySelectorAll(".reveal").forEach(el => {
 });
 </script>
 
-<div id="chat-messages" style="border:1px solid #ccc; height:200px; overflow:auto; padding:10px;"></div>
+<!-- Floating Chat Icon -->
+<div id="chat-toggle" onclick="toggleChat()">💬</div>
 
-<input id="chat-input" type="text" placeholder="Ask something..." style="width:70%; padding:8px;">
+<!-- Chat Window -->
+<div id="chat-widget">
+  <div id="chat-header">
+    <span>Ask Harish AI</span>
+    <button onclick="toggleChat()">✖</button>
+  </div>
 
-<button onclick="sendMessage()" style="padding:8px;">Send</button>
+  <div id="chat-messages"></div>
 
+  <div id="chat-input-area">
+    <input id="chat-input" type="text" placeholder="Ask something..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
 
 <script>
+
+
+/* ================= CHAT SCRIPT ================= */
+
+function toggleChat() {
+  const widget = document.getElementById("chat-widget");
+  if (widget.style.display === "none" || widget.style.display === "") {
+    widget.style.display = "flex";
+  } else {
+    widget.style.display = "none";
+  }
+}
+
 async function sendMessage() {
   const input = document.getElementById("chat-input");
   const message = input.value.trim();
@@ -404,8 +473,15 @@ async function sendMessage() {
     messagesDiv.innerHTML += "<p><b>AI:</b> Error connecting to server.</p>";
   }
 }
-</script>
 
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("chat-input").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  });
+});
+</script>
 
 </body>
 </html>
