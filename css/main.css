@@ -1,0 +1,42 @@
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 100%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 0%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(120deg, #071224, #0a192f, #0f2a4a, #0b1b34);
+  background-size: 300% 300%;
+  animation: gradientFlow 22s ease infinite;
+  color: #e6edf6;
+}
+
+.glass {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.4s ease;
+}
+
+.glass:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(56,189,248,0.25);
+}
+
+.tag {
+  background: rgba(56,189,248,0.1);
+  border: 1px solid rgba(56,189,248,0.4);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+img {
+  box-shadow: 0 30px 80px rgba(56,189,248,0.35);
+}
