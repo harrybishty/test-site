@@ -337,20 +337,30 @@ font-weight: bold;
    PREMIUM MOBILE CHAT EXPERIENCE
 ======================================== */
 
-#chat-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(4px);
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s ease;
-  z-index: 9998;
-}
 
-#chat-overlay.active {
-  opacity: 1;
-  visibility: visible;
+/* Overlay default (desktop) */
+#chat-overlay {
+  display: none;
+}
+/* Overlay only for mobile */
+@media (max-width: 768px) {
+
+  #chat-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 9998;
+  }
+
+  #chat-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
 }
 
 @media (max-width: 768px) {
