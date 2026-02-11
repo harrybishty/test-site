@@ -398,7 +398,7 @@ font-weight: bold;
 
 .wa-widget {
    position: fixed;
-   top: 80px;
+   top: 55px;
    right: 25px;
    z-index: 20000;
    font-family: 'Inter', sans-serif;
