@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="ai-message">
       Hi 👋 I’m Harish’s AI assistant. How can I help you today?
     </div>
+     </div>
   `;
 
   /* =====================================================
