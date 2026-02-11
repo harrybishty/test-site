@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const input = document.getElementById("chat-input");
   const messages = document.getElementById("chat-messages");
   const closeBtn = document.getElementById("chat-close");
+  const overlay = document.getElementById("chat-overlay");
+
 /* =====================================================
    🕒 INACTIVITY TIMER VARIABLES
    ===================================================== */
@@ -96,15 +98,15 @@ function resetInactivityTimer() {
      ===================================================== */
 
  bubble.addEventListener("click", function () {
-  if (windowBox.style.display === "flex") {
-    windowBox.style.display = "none";
-    clearTimeout(inactivityTimer);
-    clearTimeout(warningTimer);
-  } else {
-    windowBox.style.display = "flex";
-    input.focus();
-    resetInactivityTimer();
-  }
+
+  windowBox.classList.add("active");
+  overlay.classList.add("active");
+
+  bubble.style.display = "none";
+
+  input.focus();
+  resetInactivityTimer();
+
 });
 
   /* =====================================================
@@ -246,10 +248,24 @@ if (closeBtn) {
 
     // Close after 2 seconds
     setTimeout(() => {
-      windowBox.style.display = "none";
-    }, 1500);
+     windowBox.classList.remove("active");
+      overlay.classList.remove("active");
+      bubble.style.display = "block";
+    }, 1200);
 
-  });
+  });overlay.addEventListener("click", function () {
+
+  windowBox.classList.remove("active");
+  overlay.classList.remove("active");
+  bubble.style.display = "block";
+
+});
 }
+overlay.addEventListener("click", function () {
 
+  windowBox.classList.remove("active");
+  overlay.classList.remove("active");
+  bubble.style.display = "block";
+
+});
 });
